@@ -1,0 +1,6 @@
+node_modules
+dist
+prisma
+apps/server/data
+db/data/*/**
+pnpm-lock.yaml

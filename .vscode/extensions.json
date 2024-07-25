@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "prisma.prisma",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "formulahendry.auto-rename-tag",
+    "meganrogge.template-string-converter",
+    "streetsidesoftware.code-spell-checker",
+    "bradlc.vscode-tailwindcss",
+    "usernamehw.errorlens",
+    "clinyong.vscode-css-modules",
+    "vunguyentuan.vscode-css-variables",
+    "csstools.postcss",
+    "dsznajder.es7-react-js-snippets",
+    "unifiedjs.vscode-mdx",
+    "ahmadalli.vscode-nginx-conf",
+    "raynigon.nginx-formatter",
+    "chakrounanas.turbo-console-log"
+  ]
+}

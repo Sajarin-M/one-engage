@@ -1,0 +1,37 @@
+{
+  "name": "@one-engage/web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo -p 3000",
+    "lint": "tsc --noEmit",
+    "start": "next start -p 3000",
+    "build": "next build",
+    "clean": "rm -rf .turbo && rm -rf .next && rm -rf node_modules"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.11.0",
+    "clsx": "^2.1.1",
+    "jwt-decode": "^4.0.0",
+    "next": "14.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.1",
+    "react-icons": "^5.2.1",
+    "sharp": "^0.33.4",
+    "tailwind-merge": "^2.4.0",
+    "typescript": "^5.5.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@one-engage/tsconfig": "workspace:*",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20.14.11",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

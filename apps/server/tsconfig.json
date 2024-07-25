@@ -1,0 +1,14 @@
+{
+  "extends": "@one-engage/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "src",
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "outDir": "dist",
+    "noEmit": false
+  },
+  "include": ["src"]
+}
