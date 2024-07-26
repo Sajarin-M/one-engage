@@ -1,5 +1,4 @@
 import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
-import { useWindowEvent } from '@mantine/hooks';
 import { jwtDecode } from 'jwt-decode';
 import type { AdminAccessTokenData } from '@/types';
 import { AuthContext, getAuthTokenFromStorage, tokenKey } from './auth-context';
@@ -11,17 +10,23 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     _setToken(getAuthTokenFromStorage());
     setAuthLoading(false);
-  }, []);
 
-  useWindowEvent('storage', (event) => {
-    if (
-      (event.storageArea === localStorage || event.storageArea === sessionStorage) &&
-      event.key === tokenKey &&
-      event.newValue
-    ) {
-      _setToken(event.newValue);
-    }
-  });
+    const listener = (event: StorageEvent) => {
+      if (
+        (event.storageArea === localStorage || event.storageArea === sessionStorage) &&
+        event.key === tokenKey &&
+        event.newValue
+      ) {
+        _setToken(event.newValue);
+      }
+    };
+
+    window.addEventListener('storage', listener);
+
+    return () => {
+      window.removeEventListener('storage', listener);
+    };
+  }, []);
 
   const user = useMemo(() => {
     try {

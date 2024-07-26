@@ -3,8 +3,9 @@ import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { env } from '@/lib/env';
+import { cn } from '@/lib/utils';
 
-const poppins = Poppins({ weight: '400', subsets: ['latin'] });
+const poppins = Poppins({ weight: '400', subsets: ['latin'], variable: '--font-sans' });
 
 export const viewport: Viewport = {
   themeColor: '#000000',
@@ -18,7 +19,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang='en'>
       <head></head>
-      <body className={poppins.className}>{children}</body>
+      <body className={cn(poppins.className, poppins.variable)}>{children}</body>
     </html>
   );
 }
