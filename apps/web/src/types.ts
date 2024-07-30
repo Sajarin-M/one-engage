@@ -84,3 +84,18 @@ export type EditWhatWeOfferDto = {
   description: string;
   image: ImageVm;
 };
+
+export type UnlockYourWorldVm = {
+  title: string;
+  buttonLabel: string;
+  buttonLink: string;
+  image: ImageVm;
+  visible: boolean;
+};
+
+export type EditUnlockYourWorldDto = {
+  title: string;
+  buttonLabel: string;
+  buttonLink: string;
+  image: ImageVm;
+};

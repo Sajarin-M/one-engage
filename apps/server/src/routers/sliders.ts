@@ -35,6 +35,7 @@ slidersRouter.post(
         data: { title: req.body.title, image: req.body.image },
         select: sliderSelect,
       });
+
       return createdSlider;
     },
   }),

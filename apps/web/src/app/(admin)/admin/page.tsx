@@ -4,6 +4,7 @@ import HeroSection from '@/components/hero-section';
 import Navbar from '@/components/navbar';
 import PageContentSection from '@/components/page-content-section';
 import Sidebar from '@/components/sidebar';
+import UnlockYourWorldSection from '@/components/unlock-your-world-section';
 import WhatWeOfferSection from '@/components/what-we-offer-section';
 import WhoWeAreSection from '@/components/who-we-are-section';
 
@@ -18,6 +19,7 @@ export default function HomePage() {
           <PageContentSection />
           <WhoWeAreSection />
           <WhatWeOfferSection />
+          <UnlockYourWorldSection />
         </div>
       </div>
     </div>

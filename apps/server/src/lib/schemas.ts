@@ -37,3 +37,10 @@ export const editWhatWeOfferSchema = z.object({
   description: z.string().min(1, 'Required'),
   image: imageSchema,
 });
+
+export const editUnlockYourWorldSchema = z.object({
+  title: z.string().min(1, 'Required'),
+  buttonLabel: z.string().min(1, 'Required'),
+  buttonLink: z.string().min(1, 'Required'),
+  image: imageSchema,
+});

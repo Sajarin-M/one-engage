@@ -5,6 +5,7 @@ import { errorHandler } from '../lib/helpers.js';
 import { imagesRouter } from './images.js';
 import pageContentRouter from './page-content.js';
 import slidersRouter from './sliders.js';
+import unlockYourWorldRouter from './unlock-your-world.js';
 import whatWeOfferRouter from './what-we-offer.js';
 import whoWeAreRouter from './who-we-are.js';
 
@@ -19,6 +20,7 @@ export function registerRoutes(app: Express) {
   app.use('/api/admin/page-content', pageContentRouter);
   app.use('/api/admin/who-we-are', whoWeAreRouter);
   app.use('/api/admin/what-we-offer', whatWeOfferRouter);
+  app.use('/api/admin/unlock-your-world', unlockYourWorldRouter);
 
   app.use(errorHandler);
 }

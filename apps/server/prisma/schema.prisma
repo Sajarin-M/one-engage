@@ -66,3 +66,14 @@ model WhatWeOffer {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model UnlockYourWorld {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  buttonLabel String
+  buttonLink  String
+  image       Image
+  visible     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
