@@ -5,6 +5,7 @@ import { errorHandler } from '../lib/helpers.js';
 import { imagesRouter } from './images.js';
 import pageContentRouter from './page-content.js';
 import slidersRouter from './sliders.js';
+import whatWeOfferRouter from './what-we-offer.js';
 import whoWeAreRouter from './who-we-are.js';
 
 export function registerRoutes(app: Express) {
@@ -17,6 +18,7 @@ export function registerRoutes(app: Express) {
   app.use('/api/admin/sliders', slidersRouter);
   app.use('/api/admin/page-content', pageContentRouter);
   app.use('/api/admin/who-we-are', whoWeAreRouter);
+  app.use('/api/admin/what-we-offer', whatWeOfferRouter);
 
   app.use(errorHandler);
 }

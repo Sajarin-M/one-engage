@@ -30,3 +30,10 @@ export const editWhoWeAreSchema = z.object({
   buttonLabel: z.string().min(1, 'Required'),
   image: imageSchema,
 });
+
+export const editWhatWeOfferSchema = z.object({
+  title: z.string().min(1, 'Required'),
+  subtitle: z.string().min(1, 'Required'),
+  description: z.string().min(1, 'Required'),
+  image: imageSchema,
+});

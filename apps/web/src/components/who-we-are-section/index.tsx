@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import HomeScreenCard from '../home-screen-card';
 import Image from '../image';
 import VisibilityButton from '../visibility-button';
-import EditSliderForm from './edit-who-we-are';
+import EditWhoWeAre from './edit-who-we-are';
 
 export default function WhoWeAreSection() {
   const [open, setOpen] = useState(false);
@@ -52,7 +52,7 @@ export default function WhoWeAreSection() {
           Edit
         </Button>
       </div>
-      <EditSliderForm data={whoWeAre} open={open} onOpenChange={setOpen} />
+      <EditWhoWeAre data={whoWeAre} open={open} onOpenChange={setOpen} />
       <div className='mt-5 grid h-[35rem] grid-cols-[2fr_3fr] grid-rows-[3fr_4fr_4fr_6rem] gap-5'>
         <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-2xl font-extrabold text-primary'>
           {whoWeAre?.title}

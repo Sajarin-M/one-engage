@@ -69,3 +69,18 @@ export type EditWhoWeAreDto = {
   buttonLabel: string;
   image: ImageVm;
 };
+
+export type WhatWeOfferVm = {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: ImageVm;
+  visible: boolean;
+};
+
+export type EditWhatWeOfferDto = {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: ImageVm;
+};
