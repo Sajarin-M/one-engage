@@ -5,6 +5,7 @@ import { errorHandler } from '../lib/helpers.js';
 import { imagesRouter } from './images.js';
 import pageContentRouter from './page-content.js';
 import slidersRouter from './sliders.js';
+import whoWeAreRouter from './who-we-are.js';
 
 export function registerRoutes(app: Express) {
   app.use(cors());
@@ -15,6 +16,7 @@ export function registerRoutes(app: Express) {
   app.use('/api/admin/images', imagesRouter);
   app.use('/api/admin/sliders', slidersRouter);
   app.use('/api/admin/page-content', pageContentRouter);
+  app.use('/api/admin/who-we-are', whoWeAreRouter);
 
   app.use(errorHandler);
 }

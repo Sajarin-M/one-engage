@@ -52,3 +52,20 @@ export type EditPageContentDto = {
 export type ChangeVisibilityDto = {
   visible: boolean;
 };
+
+export type WhoWeAreVm = {
+  title: string;
+  subtitle: string;
+  description: string;
+  buttonLabel: string;
+  image: ImageVm;
+  visible: boolean;
+};
+
+export type EditWhoWeAreDto = {
+  title: string;
+  subtitle: string;
+  description: string;
+  buttonLabel: string;
+  image: ImageVm;
+};

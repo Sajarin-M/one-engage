@@ -16,7 +16,10 @@ export default function VisibilityButton({
 }: VisibilityButtonProps) {
   return (
     <div
-      className={cn('relative flex h-9 w-[10rem] rounded-3xl bg-[#F4F4F4] text-sm', className)}
+      className={cn(
+        'relative flex h-9 w-[10rem] cursor-pointer rounded-3xl bg-[#F4F4F4] text-sm',
+        className,
+      )}
       {...rest}
     >
       <div

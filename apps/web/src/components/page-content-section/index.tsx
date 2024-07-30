@@ -37,7 +37,9 @@ export default function PageContentSection() {
           isLoading={isPageContentPending}
           value={isVisibilityMutationPending ? variables.visible : pageContent?.visible || false}
           onChange={(newState) => {
-            changeVisibility({ visible: newState });
+            if (pageContent && newState !== pageContent.visible) {
+              changeVisibility({ visible: newState });
+            }
           }}
           className='ml-auto'
         />
@@ -53,7 +55,7 @@ export default function PageContentSection() {
       </div>
       <EditSliderForm data={pageContent} open={open} onOpenChange={setOpen} />
       <div className='mt-5 grid h-[35rem] grid-cols-[2fr_3fr] grid-rows-[5fr_4fr_6rem] gap-5'>
-        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-bold'>
+        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-lg font-extrabold'>
           {pageContent?.title}
         </div>
         <div className='row-span-3 flex items-center justify-center rounded-lg bg-[#F7F7F7] p-6'>
@@ -62,7 +64,7 @@ export default function PageContentSection() {
         <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6'>
           {pageContent?.subtitle}
         </div>
-        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-bold italic text-primary'>
+        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-extrabold italic text-primary'>
           {pageContent?.buttonLabel}
         </div>
       </div>

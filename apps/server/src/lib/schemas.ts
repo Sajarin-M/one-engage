@@ -14,6 +14,8 @@ export const createSliderSchema = z.object({
   image: imageSchema,
 });
 
+export const editSliderSchema = createSliderSchema;
+
 export const editPageContentSchema = z.object({
   title: z.string().min(1, 'Required'),
   subtitle: z.string().min(1, 'Required'),
@@ -21,4 +23,10 @@ export const editPageContentSchema = z.object({
   image: imageSchema,
 });
 
-export const editSliderSchema = createSliderSchema;
+export const editWhoWeAreSchema = z.object({
+  title: z.string().min(1, 'Required'),
+  subtitle: z.string().min(1, 'Required'),
+  description: z.string().min(1, 'Required'),
+  buttonLabel: z.string().min(1, 'Required'),
+  image: imageSchema,
+});
