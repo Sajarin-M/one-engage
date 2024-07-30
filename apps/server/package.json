@@ -14,7 +14,8 @@
     "prisma-migration": "pnpm prisma migrate dev --create-only --skip-seed --skip-generate",
     "prisma-studio": "pnpm prisma studio",
     "prisma-deploy": "pnpm prisma migrate deploy",
-    "setup": "pnpm run prisma-generate"
+    "setup": "pnpm run prisma-generate",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
