@@ -10,10 +10,7 @@ export default function Navbar() {
     <nav className='sticky top-0 ml-10 flex items-center gap-5 bg-white px-7 py-5'>
       <h1 className='text-2xl font-semibold'>Dashboard</h1>
       <div className='relative ml-auto'>
-        <Input
-          className='border-none bg-[#F9FAFB] pl-12 focus-visible:ring-1 focus-visible:ring-offset-0'
-          placeholder='Search here...'
-        />
+        <Input className='border-none bg-[#F9FAFB] pl-12' placeholder='Search here...' />
         <div className='absolute top-1/2 ml-3 h-6 w-6 -translate-y-1/2'>
           <SearchIcon />
         </div>

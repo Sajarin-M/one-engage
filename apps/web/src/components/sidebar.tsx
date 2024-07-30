@@ -32,7 +32,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className='sticky top-0 h-screen w-[308px] bg-white px-8 py-12'>
+    <div className='fixed top-0 h-screen w-[var(--w-sidebar)] shrink-0 bg-white px-8 py-12'>
       <Image src={companyLogo} alt='One Engage Logo' className='h-[2.15rem] w-auto' />
       <ul className='mt-12 flex flex-col gap-3 text-[#737791]'>
         {sidebarLinks.map((link) => {

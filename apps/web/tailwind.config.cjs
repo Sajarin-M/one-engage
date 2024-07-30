@@ -22,6 +22,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },
+      width: {
+        'action-btn': 'var(--w-action-btn)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

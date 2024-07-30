@@ -7,7 +7,7 @@ export default function EngIcon() {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_2_112)'>
+      <g clipPath='url(#clip0_2_112)'>
         <path
           d='M12.0003 0.75C9.88159 0.751693 7.80642 1.35165 6.01367 2.4808H17.9706C16.1825 1.35461 14.1134 0.754774 12.0003 0.75Z'
           fill='#B22234'

@@ -55,10 +55,7 @@ export default function Login() {
                 <FormItem className='mt-14'>
                   <FormLabel className='text-base font-light'>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      {...field}
-                      className='border-none bg-secondary/50 focus-visible:ring-1 focus-visible:ring-offset-0'
-                    />
+                    <Input {...field} className='border-none bg-secondary/50' />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -76,11 +73,7 @@ export default function Login() {
                     </a>
                   </div>
                   <FormControl>
-                    <Input
-                      {...field}
-                      type='password'
-                      className='border-none bg-secondary/50 focus-visible:ring-1 focus-visible:ring-offset-0'
-                    />
+                    <Input {...field} type='password' className='border-none bg-secondary/50' />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
