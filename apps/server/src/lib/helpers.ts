@@ -30,7 +30,6 @@ export const isAdmin = (req: Request) => {
   }
 
   const token = req.headers.authorization.split('Bearer ')[1];
-  console.log(token);
 
   try {
     const user = jwt.verify(token, env.JWT_PRIVATE_KEY);
