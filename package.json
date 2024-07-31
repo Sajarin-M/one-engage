@@ -8,7 +8,6 @@
     "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo",
     "format": "prettier --write . '!./db/data'",
     "setup": "pnpm install && turbo run setup",
-    "deploy": "pnpm --dir packages/scripts run deploy",
     "prepare": "husky"
   },
   "devDependencies": {
