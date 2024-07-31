@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { Prisma, prisma } from '../lib/db.js';
-import { handler } from '../lib/helpers.js';
+import { handler, isAdmin } from '../lib/helpers.js';
 import { editPageContentSchema } from '../lib/schemas.js';
 
 const pageContentRouter = Router();
@@ -18,7 +18,7 @@ const pageContentSelect = {
 pageContentRouter.get(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     handler: async () => {
       const pageContent = await prisma.pageContent.findFirst({
         select: pageContentSelect,

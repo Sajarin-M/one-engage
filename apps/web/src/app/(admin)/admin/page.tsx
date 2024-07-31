@@ -2,13 +2,15 @@
 
 import HeroSection from '@/components/hero-section';
 import Navbar from '@/components/navbar';
+import NoMattersSection from '@/components/no-matters-section';
 import PageContentSection from '@/components/page-content-section';
 import Sidebar from '@/components/sidebar';
 import UnlockYourWorldSection from '@/components/unlock-your-world-section';
 import WhatWeOfferSection from '@/components/what-we-offer-section';
 import WhoWeAreSection from '@/components/who-we-are-section';
+import WithAuth from '@/components/with-auth';
 
-export default function HomePage() {
+function HomePage() {
   return (
     <div className='flex bg-[#FAFBFC]'>
       <Sidebar />
@@ -20,8 +22,11 @@ export default function HomePage() {
           <WhoWeAreSection />
           <WhatWeOfferSection />
           <UnlockYourWorldSection />
+          <NoMattersSection />
         </div>
       </div>
     </div>
   );
 }
+
+export default WithAuth(HomePage);

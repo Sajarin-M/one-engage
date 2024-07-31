@@ -1,3 +1,12 @@
+export type LoginDto = {
+  email: string;
+  password: string;
+};
+
+export type LoginVm = {
+  token: string;
+};
+
 export type AdminAccessTokenData = {
   id: string;
   email: string;
@@ -98,4 +107,14 @@ export type EditUnlockYourWorldDto = {
   buttonLabel: string;
   buttonLink: string;
   image: ImageVm;
+};
+export type NoMattersVm = {
+  title: string;
+  subtitle: string;
+  visible: boolean;
+};
+
+export type EditNoMattersDto = {
+  title: string;
+  subtitle: string;
 };

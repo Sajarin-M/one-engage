@@ -6,7 +6,6 @@ import FileButton, { FileButtonProps } from './file-button';
 import { Button, ButtonProps } from './ui/button';
 
 function Preview({ src, className, ...rest }: ComponentPropsWithoutRef<'img'>) {
-  console.log(src);
   return (
     <div
       {...rest}

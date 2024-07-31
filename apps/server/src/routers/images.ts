@@ -6,6 +6,7 @@ import path from 'path';
 import multer from 'multer';
 import { getPlaiceholder } from 'plaiceholder';
 import { env } from '../lib/env.js';
+import { isAdminExpress } from '../lib/helpers.js';
 
 class InvalidFileTypeError extends Error {}
 
@@ -25,7 +26,7 @@ const imageUpload = multer({
 
 export const imagesRouter = Router();
 
-imagesRouter.post('/upload', (req, res) => {
+imagesRouter.post('/upload', isAdminExpress, (req, res) => {
   imageUpload(req, res, async (error) => {
     if (error) {
       if (error instanceof InvalidFileTypeError) {

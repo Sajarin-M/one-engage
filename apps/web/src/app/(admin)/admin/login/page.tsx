@@ -1,9 +1,13 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 import { z } from 'zod';
+import { useLoginMutation } from '@/lib/queries/auth';
+import { useAuth } from '@/components/auth-provider';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -25,6 +29,14 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export default function Login() {
+  const { auth, authLoading, setToken } = useAuth();
+
+  useEffect(() => {
+    if (!authLoading && auth) {
+      redirect('/admin');
+    }
+  }, [auth, authLoading]);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,8 +45,19 @@ export default function Login() {
     },
   });
 
-  function onSubmit(values: FormValues) {
-    console.log(values);
+  const { mutateAsync: login } = useLoginMutation();
+
+  async function onSubmit(values: FormValues) {
+    try {
+      const { token } = await login(values);
+      setToken(token, true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  if (authLoading || auth) {
+    return null;
   }
 
   return (

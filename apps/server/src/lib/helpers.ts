@@ -20,17 +20,32 @@ export const handler = makeHandler<ZodSchema>({
 });
 
 export const isAdmin = (req: Request) => {
-  if (!('headers' in req) || !req.headers.authorization) {
+  if (
+    !('headers' in req) ||
+    !req.headers.authorization ||
+    typeof req.headers.authorization !== 'string' ||
+    !req.headers.authorization.startsWith('Bearer ')
+  ) {
     throw new AppError('Access denied', 401);
   }
 
-  const token = req.headers.authorization;
+  const token = req.headers.authorization.split('Bearer ')[1];
+  console.log(token);
 
   try {
     const user = jwt.verify(token, env.JWT_PRIVATE_KEY);
     return Object.assign(req, { user });
   } catch (error) {
     throw new AppError('Access denied', 401);
+  }
+};
+
+export const isAdminExpress = (req: Request, _res: Response, next: NextFunction) => {
+  try {
+    isAdmin(req);
+    next();
+  } catch (error) {
+    next(error);
   }
 };
 

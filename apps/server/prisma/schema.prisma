@@ -17,63 +17,58 @@ type Image {
 }
 
 model Admin {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  email     String   @unique
-  fullName  String
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String @unique
+  fullName String
+  password String
 }
 
 model Slider {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  title     String
-  image     Image
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  image Image
 }
 
 model PageContent {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   subtitle    String
   buttonLabel String
   image       Image
-  visible     Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  visible     Boolean @default(true)
 }
 
 model WhoWeAre {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   subtitle    String
   buttonLabel String
   description String
   image       Image
-  visible     Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  visible     Boolean @default(true)
 }
 
 model WhatWeOffer {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   subtitle    String
   description String
   image       Image
-  visible     Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  visible     Boolean @default(true)
 }
 
 model UnlockYourWorld {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   buttonLabel String
   buttonLink  String
   image       Image
-  visible     Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  visible     Boolean @default(true)
+}
+
+model NoMatters {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  subtitle String
+  visible  Boolean @default(true)
 }

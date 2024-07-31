@@ -1,5 +1,7 @@
 import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
+import { useWindowEvent } from '@mantine/hooks';
 import { jwtDecode } from 'jwt-decode';
+import http from '@/lib/http';
 import type { AdminAccessTokenData } from '@/types';
 import { AuthContext, getAuthTokenFromStorage, tokenKey } from './auth-context';
 
@@ -8,25 +10,22 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
-    _setToken(getAuthTokenFromStorage());
+    const token = getAuthTokenFromStorage();
+    _setToken(token);
+    http.setJwt(token || '');
     setAuthLoading(false);
-
-    const listener = (event: StorageEvent) => {
-      if (
-        (event.storageArea === localStorage || event.storageArea === sessionStorage) &&
-        event.key === tokenKey &&
-        event.newValue
-      ) {
-        _setToken(event.newValue);
-      }
-    };
-
-    window.addEventListener('storage', listener);
-
-    return () => {
-      window.removeEventListener('storage', listener);
-    };
   }, []);
+
+  useWindowEvent('storage', (event) => {
+    if (
+      (event.storageArea === localStorage || event.storageArea === sessionStorage) &&
+      event.key === tokenKey &&
+      event.newValue
+    ) {
+      _setToken(event.newValue);
+      http.setJwt(event.newValue);
+    }
+  });
 
   const user = useMemo(() => {
     try {
@@ -41,12 +40,14 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   const setToken: AuthContext['setToken'] = (token, persist) => {
     window[persist ? 'localStorage' : 'sessionStorage'].setItem(tokenKey, token);
     _setToken(token);
+    http.setJwt(token);
   };
 
   const clearToken: AuthContext['clearToken'] = () => {
     window.localStorage.removeItem(tokenKey);
     window.sessionStorage.removeItem(tokenKey);
     _setToken('');
+    http.setJwt('');
   };
 
   return (

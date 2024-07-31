@@ -44,3 +44,13 @@ export const editUnlockYourWorldSchema = z.object({
   buttonLink: z.string().min(1, 'Required'),
   image: imageSchema,
 });
+
+export const editNoMattersSchema = z.object({
+  title: z.string().min(1, 'Required'),
+  subtitle: z.string().min(1, 'Required'),
+});
+
+export const loginSchema = z.object({
+  email: z.string().email('Please enter a valid email'),
+  password: z.string().min(1, 'Please enter your password').max(100, 'Password is too long'),
+});
