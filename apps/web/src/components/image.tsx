@@ -7,7 +7,7 @@ type ImageProps = Omit<NextImageProps, 'alt' | 'src' | 'placeholder' | 'blurData
   blur?: boolean;
 };
 
-export default function Image({ image, blur = true, fill, onClick, ...rest }: ImageProps) {
+export default function Image({ image, blur = false, fill, onClick, ...rest }: ImageProps) {
   const blurProps = blur
     ? ({
         placeholder: 'blur',

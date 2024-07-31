@@ -25,3 +25,11 @@ export const useEditSliderMutation = createMutation({
     return data;
   },
 });
+
+export const useDeleteSliderMutation = createMutation({
+  mutationKey: ['delete-slider'],
+  mutationFn: async (id: string) => {
+    const { data } = await http.delete<SliderVm>(`/api/admin/sliders/${id}`);
+    return data;
+  },
+});

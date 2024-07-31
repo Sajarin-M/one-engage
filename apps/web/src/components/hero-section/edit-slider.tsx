@@ -38,7 +38,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-function EditSliderForm({ data }: EditSliderFormProps) {
+function EditSliderForm({ data, onOpenChange }: EditSliderFormProps) {
   const isEditing = data !== undefined;
 
   const queryClient = useQueryClient();
@@ -87,6 +87,7 @@ function EditSliderForm({ data }: EditSliderFormProps) {
         toast.success('Slider created successfully');
       }
       queryClient.invalidateQueries({ queryKey: useSlidersQuery.getKey() });
+      onOpenChange(false);
     } catch (error) {
       console.log(error);
     }
