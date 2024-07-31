@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getHomePageContents } from '@/lib/queries/contents';
 import Image from '@/components/image';
 import companyLogo from '@/assets/logo.svg';
+import HeroSection from './hero-section';
 
 export const metadata: Metadata = {
   title: 'One Engage: Expert Customer Engagement Solutions for Businesses',
@@ -52,6 +53,8 @@ export default async function HomePage() {
           </li>
         </ul>
       </nav>
+
+      <HeroSection sliders={contents.sliders} />
 
       {contents.pageContent && (
         <section className='grid grid-cols-2 items-center bg-[#FFDF9F] px-24 py-24'>

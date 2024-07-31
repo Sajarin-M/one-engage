@@ -53,8 +53,8 @@ export default function WhoWeAreSection() {
         </Button>
       </div>
       <EditWhoWeAre data={whoWeAre} open={open} onOpenChange={setOpen} />
-      <div className='mt-5 grid h-[35rem] grid-cols-[2fr_3fr] grid-rows-[3fr_4fr_4fr_6rem] gap-5'>
-        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-2xl font-extrabold text-primary'>
+      <div className='mt-5 grid min-h-[20rem] grid-cols-[2fr_3fr] grid-rows-[minmax(auto,_1fr)_minmax(auto,_2fr)_minmax(auto,_3fr)_minmax(auto,_1fr)] gap-5'>
+        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-2xl font-bold text-primary'>
           {whoWeAre?.title}
         </div>
         <div className='row-span-4 flex items-center justify-center rounded-lg bg-[#F7F7F7] p-6'>
@@ -66,7 +66,7 @@ export default function WhoWeAreSection() {
         <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6'>
           {whoWeAre?.description}
         </div>
-        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-extrabold italic text-primary'>
+        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-bold italic text-primary'>
           {whoWeAre?.buttonLabel}
         </div>
       </div>

@@ -52,11 +52,11 @@ export default function NoMattersSection() {
         </Button>
       </div>
       <EditNoMatters data={noMatters} open={open} onOpenChange={setOpen} />
-      <div className='mt-5 grid h-[20rem] grid-rows-[3fr_5fr] gap-5'>
-        <div className='flex items-center justify-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-2xl font-extrabold text-primary'>
+      <div className='mt-5 grid min-h-[20rem] grid-rows-[minmax(auto,_1fr)_minmax(auto,_2fr)] gap-5'>
+        <div className='flex items-center justify-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-center text-3xl font-bold text-primary'>
           {noMatters?.title}
         </div>
-        <div className='flex items-center justify-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-lg font-bold'>
+        <div className='flex items-center justify-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-center text-lg font-bold'>
           {noMatters?.subtitle}
         </div>
       </div>

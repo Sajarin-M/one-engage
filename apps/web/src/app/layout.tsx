@@ -5,7 +5,11 @@ import './globals.css';
 import { env } from '@/lib/env';
 import { cn } from '@/lib/utils';
 
-const poppins = Poppins({ weight: '400', subsets: ['latin'], variable: '--font-sans' });
+const poppins = Poppins({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const viewport: Viewport = {
   themeColor: '#000000',

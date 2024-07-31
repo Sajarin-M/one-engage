@@ -56,8 +56,8 @@ export default function WhatWeOfferSection() {
         </Button>
       </div>
       <EditWhatWeOffer data={whatWeOffer} open={open} onOpenChange={setOpen} />
-      <div className='mt-5 grid h-[35rem] grid-cols-[2fr_3fr] grid-rows-[2fr_4fr_4fr] gap-5'>
-        <div className='col-span-2 flex items-center text-balance rounded-lg bg-primary p-6 text-2xl font-extrabold text-primary-foreground'>
+      <div className='mt-5 grid min-h-[20rem] grid-cols-[2fr_3fr] grid-rows-[minmax(auto,_2fr)_minmax(auto,_4fr)_minmax(auto,_5fr)] gap-5'>
+        <div className='col-span-2 flex items-center justify-center text-balance rounded-lg bg-primary p-6 text-3xl font-bold text-primary-foreground'>
           {whatWeOffer?.title}
         </div>
         <div className='flex items-center text-balance rounded-lg bg-primary p-6 text-lg font-bold text-primary-foreground'>

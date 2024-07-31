@@ -60,8 +60,8 @@ export default function UnlockYourWorldSection() {
         </Button>
       </div>
       <EditUnlockYourWorld data={unlockYourWorld} open={open} onOpenChange={setOpen} />
-      <div className='mt-5 grid h-[25rem] grid-cols-[2fr_3fr] grid-rows-[1fr_6rem_6rem] gap-5'>
-        <div className='flex items-center text-balance rounded-lg bg-[#FFA350] p-6 text-2xl font-extrabold text-primary-foreground'>
+      <div className='mt-5 grid min-h-[20rem] grid-cols-[2fr_3fr] grid-rows-[minmax(auto,_3fr)_minmax(auto,_2fr)_minmax(auto,_2fr)] gap-5'>
+        <div className='flex items-center text-balance rounded-lg bg-[#FFA350] p-6 text-2xl font-bold text-primary-foreground'>
           {unlockYourWorld?.title}
         </div>
         <div className='row-span-3 flex items-center justify-center rounded-lg bg-[#FFA350] p-6 text-primary-foreground'>

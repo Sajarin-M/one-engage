@@ -43,7 +43,7 @@ export default function Sidebar() {
               <Link
                 href={link.href}
                 className={cn(
-                  'flex items-center gap-2 rounded-[16px] px-6 py-4',
+                  'flex items-center gap-2 rounded-[16px] px-5 py-4',
                   !isActive && 'hover:bg-gray-100 hover:text-black',
                   isActive && 'bg-[#FF6410] text-white',
                 )}

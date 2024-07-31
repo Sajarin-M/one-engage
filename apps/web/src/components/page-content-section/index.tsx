@@ -54,8 +54,8 @@ export default function PageContentSection() {
         </Button>
       </div>
       <EditSliderForm data={pageContent} open={open} onOpenChange={setOpen} />
-      <div className='mt-5 grid h-[35rem] grid-cols-[2fr_3fr] grid-rows-[5fr_4fr_6rem] gap-5'>
-        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-lg font-extrabold'>
+      <div className='mt-5 grid min-h-[20rem] grid-cols-[2fr_3fr] grid-rows-[minmax(auto,_2fr)_minmax(auto,_2fr)_minmax(auto,_1fr)] gap-5'>
+        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-lg font-bold'>
           {pageContent?.title}
         </div>
         <div className='row-span-3 flex items-center justify-center rounded-lg bg-[#F7F7F7] p-6'>
@@ -64,7 +64,7 @@ export default function PageContentSection() {
         <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6'>
           {pageContent?.subtitle}
         </div>
-        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-extrabold italic text-primary'>
+        <div className='flex items-center text-balance rounded-lg bg-[#F7F7F7] p-6 text-xl font-bold italic text-primary'>
           {pageContent?.buttonLabel}
         </div>
       </div>

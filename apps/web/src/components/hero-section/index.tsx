@@ -102,7 +102,7 @@ export default function HeroSection() {
             {sliders.map((slider) => (
               <CarouselItem>
                 <div className='grid h-full grid-cols-[4fr_5fr] gap-6'>
-                  <div className='flex items-center justify-center overflow-hidden rounded-xl bg-[#F7F7F7] p-12 text-3xl font-semibold uppercase text-primary'>
+                  <div className='flex items-center justify-center overflow-hidden text-balance rounded-xl bg-[#F7F7F7] p-12 text-center text-3xl font-bold uppercase text-primary'>
                     <p>{slider.title}</p>
                   </div>
                   <div className='flex items-center justify-center overflow-hidden rounded-xl bg-[#F7F7F7] p-12'>
