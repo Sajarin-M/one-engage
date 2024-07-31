@@ -13,7 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Input } from './ui/input';
 
 export default function Navbar() {
-  const { clearToken } = useAuth();
+  const { auth, clearToken } = useAuth();
 
   return (
     <nav className='sticky top-0 z-20 ml-10 flex items-center gap-5 bg-white px-7 py-5'>
@@ -47,10 +47,12 @@ export default function Navbar() {
                   src='https://github.com/shadcn.png'
                   alt='@shadcn'
                 />
-                <AvatarFallback className='rounded-md'>CN</AvatarFallback>
+                <AvatarFallback className='rounded-md'>
+                  {auth?.user.fullName.charAt(0) ?? ''}
+                </AvatarFallback>
               </Avatar>
               <div className='space-y-1'>
-                <div className='text-xs font-semibold'>Shadcn</div>
+                <div className='text-xs font-semibold'>{auth?.user.fullName ?? ''}</div>
                 <div className='text-xs font-light text-[#737791]'>Admin</div>
               </div>
               <div className='size-5 self-start'>
