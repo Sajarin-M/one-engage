@@ -104,7 +104,11 @@ export default function Login() {
             />
 
             <div className='mt-12 flex justify-center'>
-              <Button type='submit' className='inline-block px-10 font-semibold'>
+              <Button
+                loading={form.formState.isSubmitting}
+                type='submit'
+                className='inline-block px-10 font-semibold'
+              >
                 LOG IN
               </Button>
             </div>
