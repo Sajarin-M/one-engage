@@ -7,7 +7,7 @@ import { Input } from './ui/input';
 
 export default function Navbar() {
   return (
-    <nav className='sticky top-0 ml-10 flex items-center gap-5 bg-white px-7 py-5'>
+    <nav className='sticky top-0 z-20 ml-10 flex items-center gap-5 bg-white px-7 py-5'>
       <h1 className='text-2xl font-semibold'>Dashboard</h1>
       <div className='relative ml-auto'>
         <Input className='border-none bg-[#F9FAFB] pl-12' placeholder='Search here...' />
