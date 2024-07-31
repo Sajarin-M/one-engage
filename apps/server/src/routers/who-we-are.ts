@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { Prisma, prisma } from '../lib/db.js';
-import { handler } from '../lib/helpers.js';
+import { handler, isAdmin } from '../lib/helpers.js';
 import { editWhoWeAreSchema } from '../lib/schemas.js';
 
 const whoWeAreRouter = Router();
@@ -19,7 +19,7 @@ const whoWeAreSelect = {
 whoWeAreRouter.get(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     handler: async () => {
       const whoWeAre = await prisma.whoWeAre.findFirst({
         select: whoWeAreSelect,
@@ -32,7 +32,7 @@ whoWeAreRouter.get(
 whoWeAreRouter.put(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: editWhoWeAreSchema,
     handler: async (req) => {
       const existing = await prisma.whoWeAre.findFirst({
@@ -62,7 +62,7 @@ whoWeAreRouter.put(
 whoWeAreRouter.patch(
   '/change-visibility',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: z.object({
       visible: z.boolean(),
     }),

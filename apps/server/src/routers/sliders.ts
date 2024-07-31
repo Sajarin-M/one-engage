@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { Prisma, prisma } from '../lib/db.js';
-import { handler } from '../lib/helpers.js';
+import { handler, isAdmin } from '../lib/helpers.js';
 import { createSliderSchema, editSliderSchema } from '../lib/schemas.js';
 
 const slidersRouter = Router();
@@ -15,7 +15,7 @@ const sliderSelect = {
 slidersRouter.get(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     handler: async () => {
       const sliders = await prisma.slider.findMany({
         select: sliderSelect,
@@ -28,7 +28,7 @@ slidersRouter.get(
 slidersRouter.post(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: createSliderSchema,
     handler: async (req) => {
       const createdSlider = await prisma.slider.create({
@@ -44,7 +44,7 @@ slidersRouter.post(
 slidersRouter.put(
   '/:id',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     params: z.object({ id: z.string() }),
     body: editSliderSchema,
     handler: async (req) => {
@@ -61,7 +61,7 @@ slidersRouter.put(
 slidersRouter.delete(
   '/:id',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     params: z.object({ id: z.string() }),
     handler: async (req) => {
       const deletedSlider = await prisma.slider.delete({

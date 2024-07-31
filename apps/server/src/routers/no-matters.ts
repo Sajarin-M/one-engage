@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { Prisma, prisma } from '../lib/db.js';
-import { handler } from '../lib/helpers.js';
+import { handler, isAdmin } from '../lib/helpers.js';
 import { editNoMattersSchema } from '../lib/schemas.js';
 
 const noMattersRouter = Router();
@@ -16,7 +16,7 @@ const noMattersSelect = {
 noMattersRouter.get(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     handler: async () => {
       const noMatters = await prisma.noMatters.findFirst({
         select: noMattersSelect,
@@ -29,7 +29,7 @@ noMattersRouter.get(
 noMattersRouter.put(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: editNoMattersSchema,
     handler: async (req) => {
       const existing = await prisma.noMatters.findFirst({
@@ -59,7 +59,7 @@ noMattersRouter.put(
 noMattersRouter.patch(
   '/change-visibility',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: z.object({
       visible: z.boolean(),
     }),

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { Prisma, prisma } from '../lib/db.js';
-import { handler } from '../lib/helpers.js';
+import { handler, isAdmin } from '../lib/helpers.js';
 import { editUnlockYourWorldSchema } from '../lib/schemas.js';
 
 const unlockYourWorldRouter = Router();
@@ -18,7 +18,7 @@ const unlockYourWorldSelect = {
 unlockYourWorldRouter.get(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     handler: async () => {
       const unlockYourWorld = await prisma.unlockYourWorld.findFirst({
         select: unlockYourWorldSelect,
@@ -31,7 +31,7 @@ unlockYourWorldRouter.get(
 unlockYourWorldRouter.put(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: editUnlockYourWorldSchema,
     handler: async (req) => {
       const existing = await prisma.unlockYourWorld.findFirst({
@@ -61,7 +61,7 @@ unlockYourWorldRouter.put(
 unlockYourWorldRouter.patch(
   '/change-visibility',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: z.object({
       visible: z.boolean(),
     }),

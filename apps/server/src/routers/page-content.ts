@@ -31,7 +31,7 @@ pageContentRouter.get(
 pageContentRouter.put(
   '/',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: editPageContentSchema,
     handler: async (req) => {
       const existing = await prisma.pageContent.findFirst({
@@ -61,7 +61,7 @@ pageContentRouter.put(
 pageContentRouter.patch(
   '/change-visibility',
   handler({
-    // use: [isAdmin],
+    use: [isAdmin],
     body: z.object({
       visible: z.boolean(),
     }),

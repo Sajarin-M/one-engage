@@ -8,7 +8,7 @@ function Providers({ children }: any) {
   return (
     <>
       <QueryProvider>
-        <AuthProvider>{children}</AuthProvider>;
+        <AuthProvider>{children}</AuthProvider>
       </QueryProvider>
       <Toaster />
     </>
