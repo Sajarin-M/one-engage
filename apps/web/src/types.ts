@@ -118,3 +118,30 @@ export type EditNoMattersDto = {
   title: string;
   subtitle: string;
 };
+
+export type HomePageContentVm = {
+  sliders: {
+    id: string;
+    title: string;
+    image: ImageVm;
+  }[];
+  pageContent: {
+    title: string;
+    image: ImageVm;
+    subtitle: string;
+    buttonLabel: string;
+  } | null;
+  whoWeAre: {
+    title: string;
+    subtitle: string;
+    buttonLabel: string;
+    description: string;
+    image: ImageVm;
+  } | null;
+  whatWeOffer: {
+    title: string;
+    subtitle: string;
+    description: string;
+    image: ImageVm;
+  } | null;
+};

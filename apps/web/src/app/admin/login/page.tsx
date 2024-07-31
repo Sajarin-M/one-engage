@@ -107,7 +107,7 @@ export default function Login() {
               <Button
                 loading={form.formState.isSubmitting}
                 type='submit'
-                className='inline-block px-10 font-semibold'
+                className='px-10 font-semibold'
               >
                 LOG IN
               </Button>

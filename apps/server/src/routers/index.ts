@@ -3,6 +3,7 @@ import express, { Express } from 'express';
 import { env } from '../lib/env.js';
 import { errorHandler } from '../lib/helpers.js';
 import authRouter from './auth.js';
+import contentsRouter from './contents.js';
 import { imagesRouter } from './images.js';
 import noMattersRouter from './no-matters.js';
 import pageContentRouter from './page-content.js';
@@ -16,6 +17,8 @@ export function registerRoutes(app: Express) {
   app.use(express.json());
 
   app.use('/api/images/', express.static(env.IMAGES_DIRECTORY, { maxAge: Infinity }));
+
+  app.use('/api/contents', contentsRouter);
 
   app.use('/api/admin/auth', authRouter);
   app.use('/api/admin/images', imagesRouter);
